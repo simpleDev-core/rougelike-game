@@ -79,6 +79,14 @@ public class healthManager : MonoBehaviour
         }
         health -= damage;
         Vector3 offset = -instigator.transform.position + gameObject.transform.position;
-        rb.velocity += new Vector2(offset.x, offset.y)*100;
+        if(gameObject.tag == "Player")
+        {
+            rb.velocity += new Vector2(offset.x, offset.y) * 10;
+        }
+        else
+        {
+            rb.velocity += new Vector2(offset.x, offset.y) * 10;
+        }
+            
     }
 }
