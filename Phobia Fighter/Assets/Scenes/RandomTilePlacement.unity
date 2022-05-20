@@ -290,6 +290,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 159135313354496775, guid: 0a513cad817bc41cb9700e2cc07f3d1a, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 159135313354496775, guid: 0a513cad817bc41cb9700e2cc07f3d1a, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 159135313354496775, guid: 0a513cad817bc41cb9700e2cc07f3d1a, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a513cad817bc41cb9700e2cc07f3d1a, type: 3}
 --- !u!1001 &1536095761
@@ -397,3 +409,4 @@ MonoBehaviour:
   - {fileID: 3855096285227624233, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
   blocked: 0
   maxRooms: 0
+  CopyRoot: {fileID: 0}
