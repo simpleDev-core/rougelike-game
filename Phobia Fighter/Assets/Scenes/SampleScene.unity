@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -413,6 +414,18 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870b9a8f0f82f4f56800cc427bcd1025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &567613498
 GameObject:
   m_ObjectHideFlags: 0
@@ -22953,6 +22966,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4760667516868503213, guid: a985e905ac86547cd877484c3d5f89d7, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070583047095811801, guid: a985e905ac86547cd877484c3d5f89d7, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629245995232171358, guid: a985e905ac86547cd877484c3d5f89d7, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8655633360522129667, guid: a985e905ac86547cd877484c3d5f89d7, type: 3}
       propertyPath: DamageEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -23029,17 +23054,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8860281053610366091, guid: a985e905ac86547cd877484c3d5f89d7, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8860281053610366092, guid: a985e905ac86547cd877484c3d5f89d7, type: 3}
       propertyPath: m_LinearDrag
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8860281053610366094, guid: a985e905ac86547cd877484c3d5f89d7, type: 3}
+      propertyPath: debug
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860281053610366094, guid: a985e905ac86547cd877484c3d5f89d7, type: 3}
       propertyPath: speed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8860281053610366094, guid: a985e905ac86547cd877484c3d5f89d7, type: 3}
       propertyPath: maxSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860281053610366094, guid: a985e905ac86547cd877484c3d5f89d7, type: 3}
+      propertyPath: stuckThreshold
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a985e905ac86547cd877484c3d5f89d7, type: 3}

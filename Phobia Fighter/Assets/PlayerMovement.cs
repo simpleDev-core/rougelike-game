@@ -16,12 +16,12 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator DashDelay()
     {
-        GetComponent<CircleCollider2D>().enabled = false;
+        //GetComponent<CircleCollider2D>().enabled = false;
         Dash = true;
         yield return new WaitForSeconds(dashDelay);
         print("DashFalse");
         Dash = false;
-        GetComponent<CircleCollider2D>().enabled = true;
+        //GetComponent<CircleCollider2D>().enabled = true;
         yield break;
     }
 
