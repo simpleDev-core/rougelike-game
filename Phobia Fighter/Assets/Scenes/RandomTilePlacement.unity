@@ -371,6 +371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1831229011}
   - component: {fileID: 1831229012}
+  - component: {fileID: 1831229013}
   m_Layer: 0
   m_Name: RoomPlacementRoot
   m_TagString: RoomRoot
@@ -400,7 +401,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831229010}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f88c211bf01cc4c87ae4d30b865d1c8f, type: 3}
   m_Name: 
@@ -410,3 +411,24 @@ MonoBehaviour:
   blocked: 0
   maxRooms: 0
   CopyRoot: {fileID: 0}
+--- !u!114 &1831229013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831229010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b83741138ccde4e8a5f532faa60d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 16
+  xCount: 10
+  yCount: 10
+  Rooms:
+  - {fileID: 3855096285227624233, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
+  - {fileID: 7120527019996660316, guid: 03ed782b445284b9d8fadca9614726dc, type: 3}
+  - {fileID: 3855096285227624233, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
+  - {fileID: 1310452011493208823, guid: 21397b361bf9d8a4cb12048bca19e4b2, type: 3}
+  rotationalShuffle: 

@@ -5,8 +5,7 @@ using UnityEngine;
 public class SwordManager : MonoBehaviour
 {
     public float damage;
-    public enum swordType { base_sword, tuning_fork};
-    public swordType sword;
+    public SwordObject sword;
     public Vector2 hitboxDimensions;
     public Animator animator;
     Vector3 mouse_pos;

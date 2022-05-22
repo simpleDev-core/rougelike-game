@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     public float dashDelay = 1;
     bool Dash;
+    public Talisman talisman1;
+    public Talisman talisman2;
     // Start is called before the first frame update
     void Start()
     {
