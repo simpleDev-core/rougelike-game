@@ -102,6 +102,12 @@ public class Enemy : MonoBehaviour
                                     trackDestination = index;
                                 }
                             }
+                            if (debug)
+                            {
+                                Debug.Log(Physics2D.Linecast(gameObject.transform.position, position).collider.gameObject.name);
+                                Debug.DrawLine(gameObject.transform.position, Physics2D.Linecast(gameObject.transform.position, position).point);
+                            }
+                            
                         }
 
                     }
@@ -110,7 +116,7 @@ public class Enemy : MonoBehaviour
                         if (Vector2.Distance(transform.position, target) <= 1)
                         {
                             print("nextDestination");
-                            if (trackDestination < TrackedPositions.Count)
+                            if (trackDestination < TrackedPositions.Count-1)
                             {
                                 trackDestination += 1;
                                 target = TrackedPositions[trackDestination];
@@ -128,7 +134,7 @@ public class Enemy : MonoBehaviour
                     rb.velocity += new Vector2(((new Vector3(target.x, target.y,0) - gameObject.transform.position).normalized * speed).x, ((new Vector3(target.x, target.y, 0) - gameObject.transform.position).normalized * speed).y);
                     if(rb.velocity.magnitude < stuckThreshold && following)
                     {
-                        if (trackDestination < TrackedPositions.Count)
+                        if (trackDestination < TrackedPositions.Count-1)
                         {
                             trackDestination += 1;
                             target = TrackedPositions[trackDestination];
@@ -214,7 +220,7 @@ public class Enemy : MonoBehaviour
             {
                 if (i < TrackedPositions.Count - 1)
                 {
-                    Gizmos.color = new Color(i / TrackedPositions.Count, i / TrackedPositions.Count, i / TrackedPositions.Count);
+                    Gizmos.color = new Color(i / TrackedPositions.Count *255, i / TrackedPositions.Count * 255, i / TrackedPositions.Count * 255);
                     Gizmos.DrawLine(TrackedPositions[i], TrackedPositions[i + 1]);
                 }
             }
