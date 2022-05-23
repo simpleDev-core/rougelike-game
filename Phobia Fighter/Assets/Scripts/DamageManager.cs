@@ -23,6 +23,7 @@ public class DamageManager : MonoBehaviour
         if (collision.gameObject.GetComponent<healthManager>() != null)
         {
             collision.gameObject.GetComponent<healthManager>().Damage(damage, instigator);
+
         }
     }
 }

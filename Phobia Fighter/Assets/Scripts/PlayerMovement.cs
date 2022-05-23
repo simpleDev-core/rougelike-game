@@ -8,13 +8,25 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     public float dashDelay = 1;
     bool Dash;
+    bool cooldown;
     public Talisman talisman1;
+    public float iFrameDuration = 1;
+    public float dashCooldown = 1;
     public Talisman talisman2;
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
+
+    IEnumerator DashCooldown()
+    {
+        cooldown = true;
+        yield return new WaitForSeconds(iFrameDuration);
+        cooldown = false;
+        yield break;
+    }
+
 
     IEnumerator DashDelay()
     {
@@ -46,10 +58,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity += Vector2.right * speed;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !cooldown)
         {
             StartCoroutine(DashDelay());
             rb.velocity *= 10;
+            StartCoroutine(DashCooldown());
         }
         if (Dash)
         {
