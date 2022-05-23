@@ -23,12 +23,15 @@ public class Enemy : MonoBehaviour
     int stuckCounter;
     public bool debug;
     List<Vector2> TrackedPositions = new List<Vector2>();
+    public LayerMask IgnoreMe;
     // Start is called before the first frame update
     void Start()
     {
         target = gameObject.transform.position;
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        gameObject.transform.parent = null;
+        
     }
 
     IEnumerator CollectTrackers()
@@ -59,7 +62,7 @@ public class Enemy : MonoBehaviour
         if (walk)
         {
             rb.velocity *= dragFactor;
-            RaycastHit2D hit= Physics2D.Raycast(gameObject.transform.position, (player.transform.position-gameObject.transform.position));
+            RaycastHit2D hit= Physics2D.Raycast(gameObject.transform.position, (player.transform.position-gameObject.transform.position), Mathf.Infinity, ~IgnoreMe);
             if (hit.collider.gameObject.tag == "Player" && Vector2.Distance(transform.position,player.transform.position)<= VisionRange)
             {
                 if (!tracking)
@@ -109,7 +112,7 @@ public class Enemy : MonoBehaviour
                     {
                         if (Vector2.Distance(transform.position, target) <= 1)
                         {
-                            print("nextDestination");
+                            //print("nextDestination");
                             if (trackDestination < TrackedPositions.Count)
                             {
                                 trackDestination += 1;
@@ -182,9 +185,9 @@ public class Enemy : MonoBehaviour
 
 
                 Debug.DrawLine(gameObject.transform.position, hit.point, Color.red);
-                print(hit.collider.gameObject.name);
+                //print(hit.collider.gameObject.name);
                 
-                print(Vector2.Distance(transform.position, player.transform.position));
+                //print(Vector2.Distance(transform.position, player.transform.position));
             }
             
         }

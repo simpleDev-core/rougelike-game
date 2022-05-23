@@ -11,6 +11,7 @@ public class healthManager : MonoBehaviour
     public Image healthBar;
     bool healthBarEnabled;
     public UnityEvent DamageEvent;
+    public UnityEvent DeathEvent;
     Rigidbody2D rb;
     Volume pp;
     // Start is called before the first frame update
@@ -25,11 +26,19 @@ public class healthManager : MonoBehaviour
     }
 
     // Update is called once per frame
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
     void Update()
     {
         if (healthBarEnabled)
         {
             healthBar.fillAmount = health/maxHealth;
+        }
+        if(health<= 0)
+        {
+            DeathEvent.Invoke();
         }
     }
     IEnumerator VolumeInterp(float fadeInTime, float fadeOutTime, float delay)
