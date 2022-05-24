@@ -422,6 +422,7 @@ MonoBehaviour:
   IgnoreMe:
     serializedVersion: 2
     m_Bits: 132
+  laserOffset: 0
 --- !u!114 &7718322392819643242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,6 +468,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  healthCanvas: {fileID: 5842092435428353220}
+  alwaysShowBar: 0
 --- !u!1 &7655243778473478932
 GameObject:
   m_ObjectHideFlags: 0

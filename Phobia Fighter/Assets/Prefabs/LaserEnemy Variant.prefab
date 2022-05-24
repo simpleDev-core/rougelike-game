@@ -13,11 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7634739708682426080, guid: 67c9a69569a884775874c547587a24ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7634739708682426080, guid: 67c9a69569a884775874c547587a24ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7634739708682426080, guid: 67c9a69569a884775874c547587a24ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52,12 +52,16 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7634739708682426081, guid: 67c9a69569a884775874c547587a24ab, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ebe587eda7711427697076c6ce82f854, type: 3}
+    - target: {fileID: 7634739708682426081, guid: 67c9a69569a884775874c547587a24ab, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7634739708682426082, guid: 67c9a69569a884775874c547587a24ab, type: 3}
       propertyPath: m_Name
-      value: LaserEnemy
+      value: LaserEnemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7634739708682426087, guid: 67c9a69569a884775874c547587a24ab, type: 3}
       propertyPath: Attack
@@ -121,7 +125,7 @@ LineRenderer:
   m_SortingOrder: 2
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 76.22}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

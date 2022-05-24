@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3855096285227624233, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_Name
-      value: Room_16x16_Empty_4DoorLaser
+      value: Room_16x16_Empty_4DoorLaser Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5429707525829722365, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_Mesh
@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429707525829722365, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_InstanceId
-      value: -1235560
+      value: -995540
       objectReference: {fileID: 0}
     - target: {fileID: 5660995723996602710, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_Mesh
@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5660995723996602710, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_InstanceId
-      value: -1235552
+      value: -995532
       objectReference: {fileID: 0}
     - target: {fileID: 6579178106554120489, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_Mesh
@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6579178106554120489, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_InstanceId
-      value: -1235536
+      value: -995516
       objectReference: {fileID: 0}
     - target: {fileID: 8183626450241209882, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_Mesh
@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8183626450241209882, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_InstanceId
-      value: -1235544
+      value: -995524
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}

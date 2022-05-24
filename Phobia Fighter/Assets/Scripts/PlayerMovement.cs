@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     public float iFrameDuration = 1;
     public float dashCooldown = 1;
     public Talisman talisman2;
+    public GameObject inventoryCanvas;
+    
+    bool inventory;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +45,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            inventoryCanvas.SetActive(!inventoryCanvas.activeSelf);
+        }
         if (Input.GetKey(KeyCode.W))
         {
             rb.velocity += Vector2.up * speed;

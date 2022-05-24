@@ -14,7 +14,9 @@ public class healthManager : MonoBehaviour
     public UnityEvent DeathEvent;
     Rigidbody2D rb;
     Volume pp;
-    // Start is called before the first frame update
+    public GameObject healthCanvas;
+    public bool alwaysShowBar;
+    // Start is called before the firdst frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,6 +34,14 @@ public class healthManager : MonoBehaviour
     }
     void Update()
     {
+        if(health >= maxHealth && !alwaysShowBar)
+        {
+            healthCanvas.SetActive(false);
+        }
+        else
+        {
+            healthCanvas.SetActive(true);
+        }
         if (healthBarEnabled)
         {
             healthBar.fillAmount = health/maxHealth;

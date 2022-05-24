@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
     List<Vector2> TrackedPositions = new List<Vector2>();
     public LayerMask IgnoreMe;
     LineRenderer laserLine;
+    public float laserOffset = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -93,7 +94,7 @@ public class Enemy : MonoBehaviour
 
         if (Attack == attackType.SpinLaser && Vector2.Distance(player.transform.position, transform.position) <= 16)
         {
-            RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, new Vector2(Mathf.Cos(Time.time), Mathf.Sin(Time.time)),Mathf.Infinity, layerMask:~IgnoreMe);
+            RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, new Vector2(Mathf.Cos(Time.time + laserOffset), Mathf.Sin(Time.time + laserOffset)),Mathf.Infinity, layerMask:~IgnoreMe);
             if(hit.collider != null)
             {
                 Debug.DrawLine(transform.position, hit.point);
@@ -106,9 +107,9 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                Debug.DrawLine(transform.position, new Vector2(Mathf.Cos(Time.time), Mathf.Sin(Time.time))*100);
+                Debug.DrawLine(transform.position, new Vector2(Mathf.Cos(Time.time+laserOffset), Mathf.Sin(Time.time + laserOffset))*100);
                 laserLine.SetPosition(0, transform.position);
-                laserLine.SetPosition(1, new Vector3(Mathf.Cos(Time.time), Mathf.Sin(Time.time),0)*100+gameObject.transform.position);
+                laserLine.SetPosition(1, new Vector3(Mathf.Cos(Time.time + laserOffset), Mathf.Sin(Time.time + laserOffset),0)*100+gameObject.transform.position);
             }
         }
         if (walk)
@@ -306,6 +307,7 @@ public class Enemy : MonoBehaviour
             }
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(target, 1);
+            Gizmos.DrawLine(transform.position, transform.position + new Vector3(Mathf.Cos(Time.time + laserOffset), Mathf.Sin(Time.time + laserOffset),0) * 100);
         }
         
     }

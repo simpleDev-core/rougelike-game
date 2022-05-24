@@ -10,6 +10,8 @@ TagManager:
   - RoomBlocker
   - RoomDoor
   - Enemy
+  - InventoryCanvas
+  - Sword
   layers:
   - Default
   - TransparentFX
