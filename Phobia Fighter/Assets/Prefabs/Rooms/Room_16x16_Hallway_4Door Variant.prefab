@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
       value: 1.9904404
       objectReference: {fileID: 0}
+    - target: {fileID: 2100164734495911429, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3855096285227624232, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2733,7 +2737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6579178106554120489, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_InstanceId
-      value: -517364
+      value: -1397326
       objectReference: {fileID: 0}
     - target: {fileID: 6579178106554120489, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_ShapePathHash
@@ -2761,7 +2765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8183626450241209882, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_InstanceId
-      value: -517372
+      value: -1397334
       objectReference: {fileID: 0}
     - target: {fileID: 8183626450241209882, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_ShapePathHash

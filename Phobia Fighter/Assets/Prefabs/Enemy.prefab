@@ -411,8 +411,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   maxSpeed: 5
+  Attack: 0
+  moveRange: 5
   VisionRange: 10
   trackDestination: -1
+  attackCooldown: 1
+  attackWindup: 0.5
   stuckThreshold: 1
   debug: 0
   IgnoreMe:
