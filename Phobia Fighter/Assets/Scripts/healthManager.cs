@@ -16,6 +16,7 @@ public class healthManager : MonoBehaviour
     Volume pp;
     public GameObject healthCanvas;
     public bool alwaysShowBar;
+    public bool invincible;
     // Start is called before the firdst frame update
     void Start()
     {
@@ -92,20 +93,25 @@ public class healthManager : MonoBehaviour
     }
     public void Damage(float damage, GameObject instigator = null)
     {
-        if(damage > 0)
+        if(invincible != true)
         {
-            DamageEvent.Invoke();
+            if (damage > 0)
+            {
+                DamageEvent.Invoke();
+            }
+
+            health -= damage;
+            Vector3 offset = -instigator.transform.position + gameObject.transform.position;
+            if (gameObject.tag == "Player")
+            {
+                rb.velocity += new Vector2(offset.x, offset.y) * 10;
+            }
+            else
+            {
+                rb.velocity += new Vector2(offset.x, offset.y) * 10;
+            }
         }
-        health -= damage;
-        Vector3 offset = -instigator.transform.position + gameObject.transform.position;
-        if(gameObject.tag == "Player")
-        {
-            rb.velocity += new Vector2(offset.x, offset.y) * 10;
-        }
-        else
-        {
-            rb.velocity += new Vector2(offset.x, offset.y) * 10;
-        }
+        
             
     }
 }

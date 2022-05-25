@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 67836378686246194, guid: 67c9a69569a884775874c547587a24ab, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a61a5f5dfd12b460da3dffcfc76f7476, type: 3}
     - target: {fileID: 7634739708682426080, guid: 67c9a69569a884775874c547587a24ab, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -75,6 +79,10 @@ PrefabInstance:
       propertyPath: attackCooldown
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7735640002437456035, guid: 67c9a69569a884775874c547587a24ab, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6e6b45b9a040444ad9457606782edcd2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c9a69569a884775874c547587a24ab, type: 3}
 --- !u!1 &7619885405393346109 stripped

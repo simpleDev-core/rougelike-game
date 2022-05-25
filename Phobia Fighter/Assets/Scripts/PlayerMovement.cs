@@ -14,11 +14,12 @@ public class PlayerMovement : MonoBehaviour
     public float dashCooldown = 1;
     public Talisman talisman2;
     public GameObject inventoryCanvas;
-    
+    DamageManager damageManager;
     bool inventory;
     // Start is called before the first frame update
     void Start()
     {
+        damageManager = GetComponent<DamageManager>();
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -35,8 +36,11 @@ public class PlayerMovement : MonoBehaviour
     {
         //GetComponent<CircleCollider2D>().enabled = false;
         Dash = true;
+        Physics2D.IgnoreLayerCollision(3, 7,true);
         yield return new WaitForSeconds(dashDelay);
+        Physics2D.IgnoreLayerCollision(3, 7, false);
         print("DashFalse");
+        
         Dash = false;
         //GetComponent<CircleCollider2D>().enabled = true;
         yield break;

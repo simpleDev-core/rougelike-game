@@ -33,9 +33,11 @@ public class Enemy : MonoBehaviour
     public LayerMask IgnoreMe;
     LineRenderer laserLine;
     public float laserOffset = 0;
+    DamageManager damageManager;
     // Start is called before the first frame update
     void Start()
     {
+        damageManager = GetComponent<DamageManager>();
         if(Attack == attackType.SpinLaser)
         {
             laserLine = GetComponent<LineRenderer>();
