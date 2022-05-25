@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
     List<Vector2> TrackedPositions = new List<Vector2>();
     public LayerMask IgnoreMe;
     LineRenderer laserLine;
+    public ParticleSystem laserParticle;
     public float laserOffset = 0;
     DamageManager damageManager;
     // Start is called before the first frame update
@@ -101,10 +102,13 @@ public class Enemy : MonoBehaviour
             {
                 Debug.DrawLine(transform.position, hit.point);
                 laserLine.SetPosition(0, transform.position);
+                laserParticle.gameObject.transform.position = hit.point;
+                laserParticle.transform.rotation = Quaternion.LookRotation(new Vector2(Mathf.Cos(Time.time + laserOffset), Mathf.Sin(Time.time + laserOffset)), gameObject.transform.up);
                 laserLine.SetPosition(1, hit.point);
                 if(hit.collider.gameObject.GetComponent<healthManager>() != null)
                 {
                     hit.collider.gameObject.GetComponent<healthManager>().Damage(10*Time.deltaTime);
+                    
                 }
             }
             else
@@ -189,9 +193,8 @@ public class Enemy : MonoBehaviour
                         }
 
                     }
-                    else
-                    {
-                        if (Vector2.Distance(transform.position, target) <= moveRange)
+                    else9634
+
                         {
                             //print("nextDestination");
                             if (trackDestination < TrackedPositions.Count)

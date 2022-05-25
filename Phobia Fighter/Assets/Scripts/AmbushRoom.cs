@@ -15,7 +15,7 @@ public class AmbushRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(GetComponentsInChildren<AmbushWall>().Length);
+        //print(GetComponentsInChildren<AmbushWall>().Length);
         if (enemiesPresent <= 0)
         {
             enemiesPresent = 0;

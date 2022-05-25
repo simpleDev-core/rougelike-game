@@ -14,12 +14,14 @@ public class PlayerMovement : MonoBehaviour
     public float dashCooldown = 1;
     public Talisman talisman2;
     public GameObject inventoryCanvas;
-    DamageManager damageManager;
+    healthManager damageManager;
     bool inventory;
+    LineRenderer aimLine;
+    public LayerMask ignore;
     // Start is called before the first frame update
     void Start()
     {
-        damageManager = GetComponent<DamageManager>();
+        damageManager = GetComponent<healthManager>();
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -37,7 +39,9 @@ public class PlayerMovement : MonoBehaviour
         //GetComponent<CircleCollider2D>().enabled = false;
         Dash = true;
         Physics2D.IgnoreLayerCollision(3, 7,true);
+        damageManager.invincible = true;
         yield return new WaitForSeconds(dashDelay);
+        damageManager.invincible = false;
         Physics2D.IgnoreLayerCollision(3, 7, false);
         print("DashFalse");
         
@@ -49,6 +53,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButton(1))
+        {
+            
+
+            RaycastHit hit;
+            Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit);
+            RaycastHit2D rayHit = Physics2D.Raycast(transform.position, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)+gameObject.transform.position),Mathf.Infinity, layerMask:~ignore);
+            Debug.DrawLine(gameObject.transform.position, rayHit.point, color:Color.red);
+            print("aiming" +rayHit.distance);
+
+        }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             inventoryCanvas.SetActive(!inventoryCanvas.activeSelf);
