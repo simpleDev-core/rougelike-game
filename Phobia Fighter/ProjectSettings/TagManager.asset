@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - InventoryCanvas
   - Sword
+  - Audio
   layers:
   - Default
   - TransparentFX
