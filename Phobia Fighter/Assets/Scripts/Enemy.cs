@@ -193,7 +193,7 @@ public class Enemy : MonoBehaviour
                         }
 
                     }
-                    else9634
+                    else
 
                         {
                             //print("nextDestination");
@@ -276,7 +276,7 @@ public class Enemy : MonoBehaviour
             
         }
         
-    }
+    
 
     public void Stun()
     {

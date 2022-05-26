@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     bool inventory;
     LineRenderer aimLine;
     public LayerMask ignore;
+    public AudioManager audioManager;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -64,14 +66,24 @@ public class PlayerMovement : MonoBehaviour
             print("aiming" +rayHit.distance);
 
         }
+        if(rb.velocity.magnitude >= 1)
+        {
+            audioManager.walking = true;
+        }
+        else
+        {
+            audioManager.walking = false;
+        }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             inventoryCanvas.SetActive(!inventoryCanvas.activeSelf);
         }
         if (Input.GetKey(KeyCode.W))
         {
+            
             rb.velocity += Vector2.up * speed;
         }
+        
         if (Input.GetKey(KeyCode.S))
         {
             rb.velocity += Vector2.down * speed;
@@ -87,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && !cooldown)
         {
+            audioManager.Dash();
             StartCoroutine(DashDelay());
             rb.velocity *= 10;
             StartCoroutine(DashCooldown());

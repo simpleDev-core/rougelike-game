@@ -17,6 +17,8 @@ public class healthManager : MonoBehaviour
     public GameObject healthCanvas;
     public bool alwaysShowBar;
     public bool invincible;
+    public GameObject youDied;
+    
     // Start is called before the firdst frame update
     void Start()
     {
@@ -31,6 +33,11 @@ public class healthManager : MonoBehaviour
     // Update is called once per frame
     public void Die()
     {
+        if (youDied != null){
+            Camera.main.gameObject.transform.parent = null;
+            youDied.gameObject.SetActive(true);
+        }
+        
         Destroy(gameObject);
     }
     void Update()

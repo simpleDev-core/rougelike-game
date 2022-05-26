@@ -6406,6 +6406,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3855096285227624232}
+  - component: {fileID: -6413633940738719828}
   m_Layer: 0
   m_Name: Room_16x16_Empty_4Door
   m_TagString: Room
@@ -6429,6 +6430,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6413633940738719828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855096285227624233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62670b02b84174aa2ad4b6256246067e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 11400000, guid: 6bcb5755c70244e6eabf1c2e995a3731, type: 2}
 --- !u!1 &3855096285303189346
 GameObject:
   m_ObjectHideFlags: 0
