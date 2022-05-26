@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     LineRenderer aimLine;
     public LayerMask ignore;
     public AudioManager audioManager;
-    
+    public ParticleSystem particleDash;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //GetComponent<CircleCollider2D>().enabled = false;
         Dash = true;
+        particleDash.Play();
         Physics2D.IgnoreLayerCollision(3, 7,true);
         damageManager.invincible = true;
         yield return new WaitForSeconds(dashDelay);
