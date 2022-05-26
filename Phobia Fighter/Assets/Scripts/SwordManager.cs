@@ -35,6 +35,7 @@ public class SwordManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            playerScript.audioManager.Slash();
             animator.Play("Slash");
             Vector3 hitbox3D = hitboxDimensions / 2;
             Collider2D[] colliders = Physics2D.OverlapAreaAll(gameObject.transform.position + hitbox3D, gameObject.transform.position - hitbox3D);

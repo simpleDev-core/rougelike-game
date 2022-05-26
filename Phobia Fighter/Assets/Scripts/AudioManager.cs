@@ -40,6 +40,7 @@ public class AudioManager : MonoBehaviour
     }
     public void Slash()
     {
+        print("alask");
         AudioSource source = gameObject.AddComponent<AudioSource>();
         source.PlayOneShot(slashAudio[Mathf.RoundToInt(Random.Range(0,slashAudio.Length-1))]);
     }
