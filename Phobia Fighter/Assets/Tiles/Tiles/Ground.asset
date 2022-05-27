@@ -18,15 +18,12 @@ MonoBehaviour:
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: 21300000, guid: 0a3479343a5cd42b8b7bd6e55f970f46, type: 3}
-    - {fileID: 21300000, guid: 0a3479343a5cd42b8b7bd6e55f970f46, type: 3}
-    - {fileID: 21300000, guid: 0a3479343a5cd42b8b7bd6e55f970f46, type: 3}
-    - {fileID: 21300000, guid: 78600b19d8b784d9ea015a5325a2b04e, type: 3}
-    - {fileID: 21300000, guid: 78600b19d8b784d9ea015a5325a2b04e, type: 3}
-    - {fileID: 21300000, guid: 78600b19d8b784d9ea015a5325a2b04e, type: 3}
-    - {fileID: 21300000, guid: 24c35d2d2d8054d7abee58fa0310fbe4, type: 3}
-    - {fileID: 21300000, guid: 23eba607ddc934555b3b084d38e0cfa7, type: 3}
-    - {fileID: 21300000, guid: 40eb3441fc5f54383b51d87418d27d47, type: 3}
+    - {fileID: 21300000, guid: 20304ee6ac03d41209efc4c64793f6e2, type: 3}
+    - {fileID: 21300000, guid: bee50a89feaf84513b4371be15373084, type: 3}
+    - {fileID: 21300000, guid: 7de79e4c85ea647fd86c9f8763ed52c9, type: 3}
+    - {fileID: 21300000, guid: 30c69b4046e29434ea07573dcab64a03, type: 3}
+    - {fileID: 21300000, guid: 98b736e3125854a0a9d1859370ffd2a4, type: 3}
+    - {fileID: 21300000, guid: 7de79e4c85ea647fd86c9f8763ed52c9, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1

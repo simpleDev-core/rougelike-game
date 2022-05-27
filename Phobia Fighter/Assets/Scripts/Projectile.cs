@@ -18,4 +18,9 @@ public class Projectile : MonoBehaviour
         Vector2 newVeloc = gameObject.transform.right * speed;
         rb.velocity = newVeloc;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
 }

@@ -33,10 +33,11 @@ public class SwordManager : MonoBehaviour
         angle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && sword != null)
         {
+            playerScript.audioManager.slashAudio = sword.swordClips;
             playerScript.audioManager.Slash();
-            animator.Play("Slash");
+            animator.Play(sword.animName[Random.Range(0,sword.animName.Length)]);
             Vector3 hitbox3D = hitboxDimensions / 2;
             Collider2D[] colliders = Physics2D.OverlapAreaAll(gameObject.transform.position + hitbox3D, gameObject.transform.position - hitbox3D);
             //List<Collider2D> colliders = new List<Collider2D>();
@@ -55,7 +56,7 @@ public class SwordManager : MonoBehaviour
                 if(collider.gameObject.GetComponent<healthManager>() != null && collider.gameObject.tag != "Player")
                 {
                     print("DAMAGE MANAGER");
-                    collider.gameObject.GetComponent<healthManager>().Damage(damage, gameObject);
+                    collider.gameObject.GetComponent<healthManager>().Damage(sword.damage, gameObject);
                 }
             }
 
