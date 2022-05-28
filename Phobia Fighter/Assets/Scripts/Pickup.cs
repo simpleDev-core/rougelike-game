@@ -8,9 +8,11 @@ public class Pickup : MonoBehaviour
     public Talisman talisman;
     SwordManager swordManager;
     PlayerMovement playerMovement;
+    AudioSource source;
     // Start is called before the first frame update
     void Start()
     {
+        
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         swordManager = GameObject.FindGameObjectWithTag("Sword").GetComponent<SwordManager>();
     }
@@ -22,7 +24,8 @@ public class Pickup : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(sword != null)
+        
+        if (sword != null)
         {
             swordManager.sword = sword;
         }
@@ -36,6 +39,10 @@ public class Pickup : MonoBehaviour
             {
                 playerMovement.talisman2 = talisman;
             }
+        }
+        if (GetComponent<AudioSource>() != null)
+        {
+            GetComponent<AudioSource>().Play();
         }
         Destroy(gameObject);
     }

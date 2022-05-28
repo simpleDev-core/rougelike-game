@@ -102,9 +102,14 @@ public class healthManager : MonoBehaviour
     {
         if(invincible != true)
         {
+            if(GetComponent<AudioManager>()!= null)
+            {
+                GetComponent<AudioManager>().walkAudioScource.PlayOneShot(GetComponent<AudioManager>().damagedAudio);
+            }
             if (damage > 0)
             {
                 DamageEvent.Invoke();
+
             }
 
             health -= damage;
