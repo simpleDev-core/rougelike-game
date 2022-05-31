@@ -9,6 +9,9 @@ public class SwordObject : ScriptableObject
     public Sprite swordImage;
     public string[] animName;
     public float damage;
+    public Vector2 hitBoxDimensions;
+    public Vector2 hitAnchorPosition;
+    public float offsetAngle;
     public AudioClip[] swordClips;
 
 }

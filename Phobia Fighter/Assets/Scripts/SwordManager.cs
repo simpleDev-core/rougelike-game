@@ -6,7 +6,7 @@ public class SwordManager : MonoBehaviour
 {
     public float damage;
     public SwordObject sword;
-    public Vector2 hitboxDimensions;
+    //public Vector2 hitboxDimensions;
     public Vector2 tapering;
     public Animator animator;
     Vector3 mouse_pos;
@@ -16,6 +16,8 @@ public class SwordManager : MonoBehaviour
     public int hitResolution;
     public float hitLength;
     public PlayerMovement playerScript;
+    //public float angleOffset;
+    public Transform gizmoAnchor;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,21 +27,22 @@ public class SwordManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gizmoAnchor.transform.localPosition = sword.hitAnchorPosition;
         mouse_pos = Input.mousePosition;
         mouse_pos.z = 5.23f; //The distance between the camera and object
         object_pos = Camera.main.WorldToScreenPoint(target.position);
         mouse_pos.x = mouse_pos.x - object_pos.x;
         mouse_pos.y = mouse_pos.y - object_pos.y;
         angle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + sword.offsetAngle)) ;
 
         if (Input.GetMouseButtonDown(0) && sword != null)
         {
             playerScript.audioManager.slashAudio = sword.swordClips;
             playerScript.audioManager.Slash();
             animator.Play(sword.animName[Random.Range(0,sword.animName.Length)]);
-            Vector3 hitbox3D = hitboxDimensions / 2;
-            Collider2D[] colliders = Physics2D.OverlapAreaAll(gameObject.transform.position + hitbox3D, gameObject.transform.position - hitbox3D);
+            Vector3 hitbox3D = sword.hitBoxDimensions / 2;
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(gizmoAnchor.position, sword.hitBoxDimensions, gameObject.transform.rotation.z);
             //List<Collider2D> colliders = new List<Collider2D>();
             /*for (int i = 0; i < 10; i++)
             {
@@ -64,8 +67,9 @@ public class SwordManager : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position, hitboxDimensions);
-        Vector3 hitbox3D = hitboxDimensions / 2;
+        gizmoAnchor.transform.localPosition = sword.hitAnchorPosition;
+        Gizmos.DrawWireCube(gizmoAnchor.position, sword.hitBoxDimensions);
+        Vector3 hitbox3D = sword.hitBoxDimensions / 2;
         Gizmos.color = Color.green;
         for (int i = 0; i < hitResolution; i++)
         {

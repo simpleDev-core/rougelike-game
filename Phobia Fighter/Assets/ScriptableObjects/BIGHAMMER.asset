@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02a501623e057e946880c7312331d3c6, type: 3}
-  m_Name: TuningForkSword
+  m_Name: BIGHAMMER
   m_EditorClassIdentifier: 
-  name: Tuning Fork
-  swordImage: {fileID: 21300000, guid: 999b5741c48ac4972b10724891452beb, type: 3}
+  name: Hammer
+  swordImage: {fileID: 0}
   animName:
-  - Slash
+  - HammerSwing1
   damage: 3
-  hitBoxDimensions: {x: 2.5, y: 2.5}
-  hitAnchorPosition: {x: 0, y: 0}
-  offsetAngle: 0
+  hitBoxDimensions: {x: 2, y: 2}
+  hitAnchorPosition: {x: 0, y: 0.33}
+  offsetAngle: 180
   swordClips:
-  - {fileID: 8300000, guid: 997967e992c9942d79761dd0c6557674, type: 3}
+  - {fileID: 8300000, guid: 54c16251fb6b34dd1bad9ad832d19b21, type: 3}

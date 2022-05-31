@@ -15,8 +15,11 @@ MonoBehaviour:
   name: longblade
   swordImage: {fileID: 21300000, guid: d752bb6c5689049108f0ce552b1a200f, type: 3}
   animName:
-  - Slash
+  - Slash2
   damage: 1
+  hitBoxDimensions: {x: 3.2, y: 1.91}
+  hitAnchorPosition: {x: 0, y: 0.19}
+  offsetAngle: -90
   swordClips:
   - {fileID: 8300000, guid: 5c08e3282f3404e31a17616d7ecc999e, type: 3}
   - {fileID: 8300000, guid: 2a33167750bbc444ea5cc532068c6410, type: 3}
