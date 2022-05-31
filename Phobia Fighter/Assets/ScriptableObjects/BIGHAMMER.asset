@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BIGHAMMER
   m_EditorClassIdentifier: 
   name: Hammer
-  swordImage: {fileID: 0}
+  swordImage: {fileID: 21300000, guid: 650b9322716bb834e81a7e23288afba5, type: 3}
   animName:
   - HammerSwing1
   damage: 3

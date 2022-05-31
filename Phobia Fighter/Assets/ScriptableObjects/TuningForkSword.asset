@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TuningForkSword
   m_EditorClassIdentifier: 
   name: Tuning Fork
-  swordImage: {fileID: 21300000, guid: 999b5741c48ac4972b10724891452beb, type: 3}
+  swordImage: {fileID: 21300000, guid: d752bb6c5689049108f0ce552b1a200f, type: 3}
   animName:
   - Slash
   damage: 3
