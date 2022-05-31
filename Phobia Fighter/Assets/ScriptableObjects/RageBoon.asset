@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ccd8a37296942a42929e211cf47a32a, type: 3}
   m_Name: RageBoon
   m_EditorClassIdentifier: 
-  name: Rage Amulet
-  icon: {fileID: 21300000, guid: 5c938098276a94a70bd2f640e0933aea, type: 3}
+  name: Fury
+  icon: {fileID: 21300000, guid: 3c24f99025e3b4429bed1d50f654fa12, type: 3}

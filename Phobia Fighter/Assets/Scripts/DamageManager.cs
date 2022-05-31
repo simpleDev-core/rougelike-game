@@ -7,6 +7,7 @@ public class DamageManager : MonoBehaviour
     public float damage = 1;
     public bool continuous = false;
     public GameObject instigator;
+
     // Start is called before the first frame update
     void Start()
     {

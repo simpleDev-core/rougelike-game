@@ -18,6 +18,7 @@ public class SwordManager : MonoBehaviour
     public PlayerMovement playerScript;
     //public float angleOffset;
     public Transform gizmoAnchor;
+    public float damageMult = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +60,7 @@ public class SwordManager : MonoBehaviour
                 if(collider.gameObject.GetComponent<healthManager>() != null && collider.gameObject.tag != "Player")
                 {
                     print("DAMAGE MANAGER");
-                    collider.gameObject.GetComponent<healthManager>().Damage(sword.damage, gameObject);
+                    collider.gameObject.GetComponent<healthManager>().Damage(sword.damage*damageMult, gameObject);
                 }
             }
 

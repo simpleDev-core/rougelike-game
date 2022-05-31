@@ -9,6 +9,7 @@ public class Pickup : MonoBehaviour
     SwordManager swordManager;
     PlayerMovement playerMovement;
     AudioSource source;
+    bool trigger;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,26 +25,43 @@ public class Pickup : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.gameObject.tag == "Player")
+        {
+            trigger = true;
+        }
         
-        if (sword != null)
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
         {
-            swordManager.sword = sword;
+            trigger = false;
         }
-        if (talisman != null)
+    }
+    public void PickupItem()
+    {
+        if (trigger || true)
         {
-            if(!(playerMovement.talisman1 != null))
+            if (sword != null)
             {
-                playerMovement.talisman1 = talisman;
+                swordManager.sword = sword;
             }
-            else
+            if (talisman != null)
             {
-                playerMovement.talisman2 = talisman;
+                if (!(playerMovement.talisman1 != null))
+                {
+                    playerMovement.talisman1 = talisman;
+                }
+                else
+                {
+                    playerMovement.talisman2 = talisman;
+                }
             }
+            if (GetComponent<AudioSource>() != null)
+            {
+                GetComponent<AudioSource>().Play();
+            }
+            Destroy(gameObject);
         }
-        if (GetComponent<AudioSource>() != null)
-        {
-            GetComponent<AudioSource>().Play();
-        }
-        Destroy(gameObject);
     }
 }
