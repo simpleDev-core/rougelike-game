@@ -21,7 +21,10 @@ public class Pickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PickupItem();
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -40,7 +43,7 @@ public class Pickup : MonoBehaviour
     }
     public void PickupItem()
     {
-        if (trigger || true)
+        if (trigger)
         {
             if (sword != null)
             {

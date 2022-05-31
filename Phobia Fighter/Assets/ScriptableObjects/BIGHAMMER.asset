@@ -18,7 +18,7 @@ MonoBehaviour:
   - HammerSwing1
   damage: 3
   hitBoxDimensions: {x: 2, y: 2}
-  hitAnchorPosition: {x: 0, y: 0.33}
+  hitAnchorPosition: {x: -0.33, y: 0}
   offsetAngle: 180
   swordClips:
   - {fileID: 8300000, guid: 54c16251fb6b34dd1bad9ad832d19b21, type: 3}
