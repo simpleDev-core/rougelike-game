@@ -14,6 +14,7 @@ public class ShowInventorySprite : MonoBehaviour
     {
         sprite = GetComponent<Image>();
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+
     }
 
     // Update is called once per frame
@@ -23,13 +24,25 @@ public class ShowInventorySprite : MonoBehaviour
         {
             sprite.sprite = GameObject.FindGameObjectWithTag("Sword").GetComponent<SwordManager>().sword.swordImage;
         }
-        if (type == showType.talisman1)
+        else if (type == showType.talisman1)
         {
             sprite.sprite = playerScript.talisman1.icon;
         }
-        if (type == showType.talisman1)
+        else if (type == showType.talisman1)
         {
             sprite.sprite = playerScript.talisman2.icon;
+        }
+    }
+
+    public void drop()
+    {
+        if(type == showType.talisman1)
+        {
+            playerScript.talisman1 = null;
+        }
+        if (type == showType.talisman2)
+        {
+            playerScript.talisman2 = null;
         }
     }
 }

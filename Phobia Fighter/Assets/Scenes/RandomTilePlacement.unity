@@ -278,8 +278,8 @@ MonoBehaviour:
     weight: 2
     rotation: 0
   oneOffRooms:
-  - room: {fileID: 0}
-    weight: 0
+  - room: {fileID: 1412996993772684843, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+    weight: 1
     rotation: 0
   blacklist: []
 --- !u!1001 &2347668088013663668
@@ -329,6 +329,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2495498908750256320, guid: d6c206330d4b349c39428dea72a9ef64, type: 3}
+      propertyPath: orthographic size
+      value: 4.3977275
+      objectReference: {fileID: 0}
     - target: {fileID: 5189637974150135369, guid: d6c206330d4b349c39428dea72a9ef64, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -373,5 +377,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2347668088094874220, guid: d6c206330d4b349c39428dea72a9ef64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d6c206330d4b349c39428dea72a9ef64, type: 3}
