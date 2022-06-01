@@ -83,24 +83,15 @@ public class Pickup : MonoBehaviour
                 if (!(playerMovement.talisman1 != null))
                 {
                     playerMovement.talisman1 = talisman[index];
+                    Destroy(gameObject);
                 }
-                else
+                else if (!(playerMovement.talisman2 != null))
                 {
-                    if(playerMovement.talisman2 != null)
-                    {
-                        playerMovement.talisman2 = talisman[index];
-                        Talisman temp = playerMovement.talisman2;
-                        talisman.SetValue(temp, index);
-                        GetComponent<SpriteRenderer>().sprite = talisman[index].icon;
-                        talismanActive = true;
-                    }
-                    else
-                    {
-                        playerMovement.talisman2 = talisman[index];
-                        Destroy(gameObject);
-                    }
-                    
+                    playerMovement.talisman2 = talisman[index];
+                    Destroy(gameObject);
                 }
+                
+                
             }
             if (GetComponent<AudioSource>() != null)
             {

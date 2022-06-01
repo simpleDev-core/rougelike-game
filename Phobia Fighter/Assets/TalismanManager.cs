@@ -36,7 +36,7 @@ public class TalismanManager : MonoBehaviour
 
 
             }
-            if (talisman.name == "Fury")
+            else if (talisman.name == "Fury")
             {
                 if (healthManager.health < healthManager.maxHealth / 4)
                 {
