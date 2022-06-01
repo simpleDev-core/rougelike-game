@@ -97,6 +97,7 @@ public class Enemy : MonoBehaviour
 
         if (Attack == attackType.SpinLaser && Vector2.Distance(player.transform.position, transform.position) <= 16)
         {
+            laserLine.enabled = true;
             RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, new Vector2(Mathf.Cos(Time.time + laserOffset), Mathf.Sin(Time.time + laserOffset)),Mathf.Infinity, layerMask:~IgnoreMe);
             if(hit.collider != null)
             {
@@ -117,6 +118,14 @@ public class Enemy : MonoBehaviour
                 laserLine.SetPosition(0, transform.position);
                 laserLine.SetPosition(1, new Vector3(Mathf.Cos(Time.time + laserOffset), Mathf.Sin(Time.time + laserOffset),0)*100+gameObject.transform.position);
             }
+        }
+        else
+        {
+            if(Attack == attackType.SpinLaser)
+            {
+                laserLine.enabled = false;
+            }
+            
         }
         if (walk)
         {

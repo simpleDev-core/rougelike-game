@@ -25,29 +25,33 @@ public class TalismanManager : MonoBehaviour
     }
     public void OnUpdateTalisman(Talisman talisman)
     {
-        if(talisman.name == "HealthBoost")
+        if(talisman != null)
         {
-            if(healthManager.health < healthManager.maxHealth)
+            if (talisman.name == "HealthBoost")
             {
-                healthManager.health += Time.deltaTime / 5;
-            }
-            
+                if (healthManager.health < healthManager.maxHealth)
+                {
+                    healthManager.health += Time.deltaTime / 5;
+                }
 
+
+            }
+            if (talisman.name == "Fury")
+            {
+                if (healthManager.health < healthManager.maxHealth / 4)
+                {
+                    furyVolume.weight = 1;
+                    GetComponentInChildren<SwordManager>().damageMult = 2;
+                }
+                else
+                {
+                    furyVolume.weight = 0;
+                    GetComponentInChildren<SwordManager>().damageMult = 1;
+                }
+
+
+            }
         }
-        if (talisman.name == "Fury")
-        {
-            if (healthManager.health < healthManager.maxHealth/4)
-            {
-                furyVolume.weight = 1;
-                GetComponentInChildren<SwordManager>().damageMult = 2;
-            }
-            else
-            {
-                furyVolume.weight = 0;
-                GetComponentInChildren<SwordManager>().damageMult = 1;
-            }
-
-
-        }
+        
     }
 }

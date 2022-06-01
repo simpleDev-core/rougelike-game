@@ -60,7 +60,23 @@ public class Pickup : MonoBehaviour
         {
             if (!talismanActive)
             {
-                swordManager.sword = sword[ index];
+                
+                
+                if (swordManager.sword != null)
+                {
+                    talismanActive = false;
+                    
+                    SwordObject temp = swordManager.sword;
+                    
+                    swordManager.sword = sword[index];
+                    sword.SetValue(temp, index);
+                    GetComponent<SpriteRenderer>().sprite = sword[index].swordImage;
+                }
+                else
+                {
+                    swordManager.sword = sword[index];
+                    Destroy(gameObject);
+                }
             }
             else
             {
@@ -70,14 +86,27 @@ public class Pickup : MonoBehaviour
                 }
                 else
                 {
-                    playerMovement.talisman2 = talisman[index];
+                    if(playerMovement.talisman2 != null)
+                    {
+                        playerMovement.talisman2 = talisman[index];
+                        Talisman temp = playerMovement.talisman2;
+                        talisman.SetValue(temp, index);
+                        GetComponent<SpriteRenderer>().sprite = talisman[index].icon;
+                        talismanActive = true;
+                    }
+                    else
+                    {
+                        playerMovement.talisman2 = talisman[index];
+                        Destroy(gameObject);
+                    }
+                    
                 }
             }
             if (GetComponent<AudioSource>() != null)
             {
                 GetComponent<AudioSource>().Play();
             }
-            Destroy(gameObject);
         }
+
     }
 }
