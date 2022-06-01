@@ -28,7 +28,7 @@ public class ShowInventorySprite : MonoBehaviour
         {
             sprite.sprite = playerScript.talisman1.icon;
         }
-        else if (type == showType.talisman1)
+        else if (type == showType.talisman2)
         {
             sprite.sprite = playerScript.talisman2.icon;
         }
@@ -39,10 +39,12 @@ public class ShowInventorySprite : MonoBehaviour
         if(type == showType.talisman1)
         {
             playerScript.talisman1 = null;
+            sprite.sprite = null;
         }
         if (type == showType.talisman2)
         {
             playerScript.talisman2 = null;
+            sprite.sprite = null;
         }
     }
 }
