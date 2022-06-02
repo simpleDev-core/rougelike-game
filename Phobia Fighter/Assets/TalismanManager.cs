@@ -10,6 +10,7 @@ public class TalismanManager : MonoBehaviour
     PlayerMovement playerManager;
     healthManager healthManager;
     public Volume furyVolume;
+    public AudioSource furyAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,7 @@ public class TalismanManager : MonoBehaviour
             if (healthManager.health < healthManager.maxHealth / 4)
             {
                 furyVolume.weight = 1;
-                GameObject.FindGameObjectWithTag("Audio").GetComponentInChildren<AudioSource>().Play();
+                furyAudio.Play();
                 if (playerManager.HowManytalisman("Fury") == 1)
                 {
                     GetComponentInChildren<SwordManager>().damageMult = 2;
@@ -41,7 +42,7 @@ public class TalismanManager : MonoBehaviour
             else
             {
                 furyVolume.weight = 0;
-                GameObject.FindGameObjectWithTag("Audio").GetComponentInChildren<AudioSource>().Pause();
+                furyAudio.Pause();
                 GetComponentInChildren<SwordManager>().damageMult = 1;
             }
 
@@ -50,7 +51,7 @@ public class TalismanManager : MonoBehaviour
         else
         {
             furyVolume.weight = 0;
-            GameObject.FindGameObjectWithTag("Audio").GetComponentInChildren<AudioSource>().Pause();
+            furyAudio.Pause();
             GetComponentInChildren<SwordManager>().damageMult = 1;
         }
     }
