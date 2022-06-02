@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask ignore;
     public AudioManager audioManager;
     public ParticleSystem particleDash;
+    public float protDelay = 1;
+    public GameObject sheildSprite;
+    bool protDash;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,30 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    IEnumerator DashProt()
+    {
+        if(HowManytalisman("Sheild Talisman") == 1)
+        {
+            damageManager.damageMod = 0.5f;
+            sheildSprite.SetActive(true);
+            damageManager.laserProt = true;
+            yield return new WaitForSeconds(2);
+            damageManager.laserProt = false;
+            sheildSprite.SetActive(false);
+            damageManager.damageMod = 1;
+        }
+        else
+        {
+            damageManager.damageMod = 0f;
+            sheildSprite.SetActive(true);
+            damageManager.laserProt = true;
+            yield return new WaitForSeconds(4);
+            damageManager.laserProt = false;
+            sheildSprite.SetActive(false);
+            damageManager.damageMod = 1;
+        }
+    }
+
     IEnumerator DashDelay()
     {
         //GetComponent<CircleCollider2D>().enabled = false;
@@ -46,6 +73,23 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashDelay);
         damageManager.invincible = false;
         Physics2D.IgnoreLayerCollision(3, 7, false);
+        if(talisman1 != null)
+        {
+            if (talisman1.name == "Sheild Talisman")
+            {
+                StartCoroutine(DashProt());
+            }
+        }
+        if (talisman2 != null)
+        {
+            if (talisman2.name == "Sheild Talisman")
+            {
+                StartCoroutine(DashProt());
+            }
+        }
+
+        
+        
         print("DashFalse");
         
         Dash = false;
@@ -56,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetMouseButton(1))
         {
             
@@ -102,7 +147,7 @@ public class PlayerMovement : MonoBehaviour
         {
             audioManager.Dash();
             StartCoroutine(DashDelay());
-            rb.velocity *= 10;
+            rb.velocity *= 5;
             StartCoroutine(DashCooldown());
         }
         if (Dash)
@@ -113,5 +158,44 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity *= 0.7f;
         }
+    }
+
+    public bool HasTalisman(string name)
+    {
+        bool final = false;
+        if (talisman1 != null)
+        {
+            if (talisman1.name == name)
+            {
+                final = true;
+            }
+        }
+        if (talisman2 != null)
+        {
+            if (talisman2.name == name)
+            {
+                final = true;
+            }
+        }
+        return final;
+    }
+    public int HowManytalisman(string name)
+    {
+        int final = 0;
+        if (talisman1 != null)
+        {
+            if (talisman1.name == name)
+            {
+                final++;
+            }
+        }
+        if (talisman2 != null)
+        {
+            if (talisman2.name == name)
+            {
+                final++;
+            }
+        }
+        return final;
     }
 }

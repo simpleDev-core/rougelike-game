@@ -386,6 +386,7 @@ MonoBehaviour:
   alwaysShowBar: 1
   invincible: 0
   youDied: {fileID: 0}
+  damageMod: 1
 --- !u!114 &6310286151377395017
 MonoBehaviour:
   m_ObjectHideFlags: 0

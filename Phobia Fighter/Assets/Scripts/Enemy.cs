@@ -108,7 +108,7 @@ public class Enemy : MonoBehaviour
                 laserLine.SetPosition(1, hit.point);
                 if(hit.collider.gameObject.GetComponent<healthManager>() != null)
                 {
-                    hit.collider.gameObject.GetComponent<healthManager>().Damage(10*Time.deltaTime);
+                    hit.collider.gameObject.GetComponent<healthManager>().Damage(10*Time.deltaTime, type:"laser");
                     
                 }
             }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasicSword
   m_EditorClassIdentifier: 
   name: longblade
-  swordImage: {fileID: 21300000, guid: 42d0862ae4de047859f17a5fa05cb002, type: 3}
+  swordImage: {fileID: 21300000, guid: 1ec7216eaae334d88ad604fc6129e2e0, type: 3}
   animName:
   - Slash2
   damage: 1

@@ -2269,7 +2269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429707525829722365, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_InstanceId
-      value: -15225054
+      value: -20483306
       objectReference: {fileID: 0}
     - target: {fileID: 5660995723996602710, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_Mesh
@@ -2277,7 +2277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5660995723996602710, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_InstanceId
-      value: -15225046
+      value: -20483298
       objectReference: {fileID: 0}
     - target: {fileID: 6579178106554120489, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_Mesh
@@ -2285,7 +2285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6579178106554120489, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_InstanceId
-      value: -15225030
+      value: -20483282
       objectReference: {fileID: 0}
     - target: {fileID: 8183626450241209882, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_Mesh
@@ -2293,7 +2293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8183626450241209882, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
       propertyPath: m_InstanceId
-      value: -15225038
+      value: -20483290
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bccc188a10e2c4721b0755d5f71f1be7, type: 3}
@@ -2327,7 +2327,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 664bd4fd650f84cc3aec076f72eb8d89, type: 2}
     - target: {fileID: 253662773354034709, guid: de6bfdf71e3034ad682f7c63d6b1eddf, type: 3}
       propertyPath: talisman.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 253662773354034709, guid: de6bfdf71e3034ad682f7c63d6b1eddf, type: 3}
       propertyPath: talisman.Array.data[0]
@@ -2337,6 +2337,10 @@ PrefabInstance:
       propertyPath: talisman.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: f2299160c9003443da6f0f7945296a19, type: 2}
+    - target: {fileID: 253662773354034709, guid: de6bfdf71e3034ad682f7c63d6b1eddf, type: 3}
+      propertyPath: talisman.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 20973b7da1894411f87fc8aed3ec8ac3, type: 2}
     - target: {fileID: 253662773354034710, guid: de6bfdf71e3034ad682f7c63d6b1eddf, type: 3}
       propertyPath: m_Name
       value: Pickup

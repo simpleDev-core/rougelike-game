@@ -22,6 +22,37 @@ public class TalismanManager : MonoBehaviour
     {
         OnUpdateTalisman(playerManager.talisman1);
         OnUpdateTalisman(playerManager.talisman2);
+        if (playerManager.HasTalisman("Fury"))
+        {
+            
+            if (healthManager.health < healthManager.maxHealth / 4)
+            {
+                furyVolume.weight = 1;
+                GameObject.FindGameObjectWithTag("Audio").GetComponentInChildren<AudioSource>().Play();
+                if (playerManager.HowManytalisman("Fury") == 1)
+                {
+                    GetComponentInChildren<SwordManager>().damageMult = 2;
+                }
+                else
+                {
+                    GetComponentInChildren<SwordManager>().damageMult = 4;
+                }
+            }
+            else
+            {
+                furyVolume.weight = 0;
+                GameObject.FindGameObjectWithTag("Audio").GetComponentInChildren<AudioSource>().Pause();
+                GetComponentInChildren<SwordManager>().damageMult = 1;
+            }
+
+
+        }
+        else
+        {
+            furyVolume.weight = 0;
+            GameObject.FindGameObjectWithTag("Audio").GetComponentInChildren<AudioSource>().Pause();
+            GetComponentInChildren<SwordManager>().damageMult = 1;
+        }
     }
     public void OnUpdateTalisman(Talisman talisman)
     {
@@ -36,21 +67,7 @@ public class TalismanManager : MonoBehaviour
 
 
             }
-            else if (talisman.name == "Fury")
-            {
-                if (healthManager.health < healthManager.maxHealth / 4)
-                {
-                    furyVolume.weight = 1;
-                    GetComponentInChildren<SwordManager>().damageMult = 2;
-                }
-                else
-                {
-                    furyVolume.weight = 0;
-                    GetComponentInChildren<SwordManager>().damageMult = 1;
-                }
-
-
-            }
+            
         }
         
     }

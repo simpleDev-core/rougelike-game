@@ -486,6 +486,7 @@ MonoBehaviour:
   alwaysShowBar: 0
   invincible: 0
   youDied: {fileID: 0}
+  damageMod: 1
 --- !u!82 &5301794112435783472
 AudioSource:
   m_ObjectHideFlags: 0

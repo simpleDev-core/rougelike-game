@@ -18,7 +18,8 @@ public class healthManager : MonoBehaviour
     public bool alwaysShowBar;
     public bool invincible;
     public GameObject youDied;
-    
+    public float damageMod = 1;
+    public bool laserProt;
     // Start is called before the firdst frame update
     void Start()
     {
@@ -98,32 +99,36 @@ public class healthManager : MonoBehaviour
     {
         StartCoroutine(VolumeInterp(0.01f, 0, 0.5f));
     }
-    public void Damage(float damage, GameObject instigator = null)
+    public void Damage(float damage, GameObject instigator = null, string type = "normal")
     {
         if(invincible != true)
         {
-            if(GetComponent<AudioManager>()!= null)
+            if(!(laserProt == true && type == "laser"))
             {
-                GetComponent<AudioManager>().walkAudioScource.PlayOneShot(GetComponent<AudioManager>().damagedAudio);
-            }
-            if (damage > 0)
-            {
-                DamageEvent.Invoke();
+                if (GetComponent<AudioManager>() != null)
+                {
+                    GetComponent<AudioManager>().walkAudioScource.PlayOneShot(GetComponent<AudioManager>().damagedAudio);
+                }
+                if (damage > 0)
+                {
+                    DamageEvent.Invoke();
 
-            }
+                }
 
-            health -= damage;
-            Vector3 offset = -instigator.transform.position + gameObject.transform.position;
-            if (gameObject.tag == "Player")
-            {
-                rb.velocity += new Vector2(offset.x, offset.y) * 10;
+                health -= damage * damageMod;
+                Vector3 offset = -instigator.transform.position + gameObject.transform.position;
+                if (gameObject.tag == "Player")
+                {
+                    rb.velocity += new Vector2(offset.x, offset.y) * 10;
+                }
+                else
+                {
+                    rb.velocity += new Vector2(offset.x, offset.y) * 10;
+                }
             }
-            else
-            {
-                rb.velocity += new Vector2(offset.x, offset.y) * 10;
-            }
-        }
-        
             
+
+
+        }   
     }
 }
