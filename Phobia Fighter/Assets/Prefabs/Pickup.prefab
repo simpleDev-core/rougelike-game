@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: a9958588d1ae041209f35ac22643e94c, type: 3}
-  m_Color: {r: 0.6792453, g: 0.13136347, b: 0.13136347, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,8 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b37bade97f274e258bca4788e549155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sword: {fileID: 0}
-  talisman: {fileID: 11400000, guid: f2299160c9003443da6f0f7945296a19, type: 2}
+  sword:
+  - {fileID: 0}
+  talisman:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!61 &253662773354034714
 BoxCollider2D:
   m_ObjectHideFlags: 0
