@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem particleDash;
     public float protDelay = 1;
     public GameObject sheildSprite;
+    public Spell spell;
     bool protDash;
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator DashProt()
     {
+        StopCoroutine(DashProt());
         if(HowManytalisman("Sheild Talisman") == 1)
         {
             damageManager.damageMod = 0.5f;

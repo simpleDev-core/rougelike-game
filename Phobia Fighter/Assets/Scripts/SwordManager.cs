@@ -19,6 +19,7 @@ public class SwordManager : MonoBehaviour
     //public float angleOffset;
     public Transform gizmoAnchor;
     public float damageMult = 1;
+    public float stolenLife = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +62,10 @@ public class SwordManager : MonoBehaviour
                 {
                     print("DAMAGE MANAGER");
                     collider.gameObject.GetComponent<healthManager>().Damage(sword.damage*damageMult, gameObject);
+                    if(stolenLife != 0)
+                    {
+                        transform.parent.gameObject.GetComponent<healthManager>().health += sword.damage * stolenLife;
+                    }
                 }
             }
 
