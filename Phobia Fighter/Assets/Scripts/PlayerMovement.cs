@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator DashProt()
     {
+        StopCoroutine(DashProt());
         if(HowManytalisman("Sheild Talisman") == 1)
         {
             damageManager.damageMod = 0.5f;
