@@ -15,6 +15,8 @@ public class BossSummoner : MonoBehaviour
     GameObject player;
     AudioSource ambiance;
     UnityEngine.Rendering.Universal.Light2D playerLight;
+    public float brightness = 0.1f;
+    float oldBright;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,18 +32,39 @@ public class BossSummoner : MonoBehaviour
     {
         
     }
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Summon();
+            gameObject.GetComponent<SphereCollider>().enabled = false;
+        }
+    }
     public void setPlayerLight(float intensity)
     {
+        oldBright = playerLight.intensity;
         playerLight.intensity = intensity;
         playerLight.shadowIntensity = 1;
+    }
+    IEnumerator dissapear()
+    {
+        yield return new WaitForSeconds(this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + destructionDelay);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<UnityEngine.Rendering.Universal.Light2D>().enabled = false;
+        yield break;
     }
     public void Summon()
     {
         animator.Play(summonAnim, 0);
-        Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + destructionDelay);
-        Instantiate(summon, gameObject.transform.position, Quaternion.identity);
+        StartCoroutine(dissapear());
+        //Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + destructionDelay);
+        GameObject clone = Instantiate(summon, gameObject.transform.position, Quaternion.identity);
+        clone.GetComponent<Boss>().summoner = gameObject.GetComponent<BossSummoner>();
         ambiance.Pause();
-
-
+    }
+    public void FinishSummon()
+    {
+        setPlayerLight(oldBright);
+        ambiance.Play();
     }
 }

@@ -8,6 +8,7 @@ public class healthManager : MonoBehaviour
 {
     public float health = 12;
     public float maxHealth = 12;
+    //public float tempHealth = 0;
     public Image healthBar;
     bool healthBarEnabled;
     public UnityEvent DamageEvent;
@@ -43,6 +44,10 @@ public class healthManager : MonoBehaviour
     }
     void Update()
     {
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
         if(health >= maxHealth && !alwaysShowBar)
         {
             healthCanvas.SetActive(false);
@@ -75,7 +80,7 @@ public class healthManager : MonoBehaviour
                 }
                 //print(x / fadeOutTime / Time.deltaTime);
                 //print(x.ToString() + (fadeInTime / Time.deltaTime).ToString());
-                yield return new WaitForEndOfFrame();
+                yield return new WaitForSeconds(Time.deltaTime);
             }
         }
         pp.weight = 1;
@@ -91,14 +96,20 @@ public class healthManager : MonoBehaviour
             }
             //print(x / fadeOutTime / Time.deltaTime);
             //print(x.ToString() + (fadeOutTime / Time.deltaTime).ToString());
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(Time.deltaTime);
         }
         pp.weight = 0;
     }
+
+
+
     public void PostProcessingEdit()
     {
-        StartCoroutine(VolumeInterp(0.01f, 0, 0.5f));
+        StartCoroutine(VolumeInterp(0.1f, 0, 1f));
     }
+
+
+
     public void Damage(float damage, GameObject instigator = null, string type = "normal")
     {
         if(invincible != true)
