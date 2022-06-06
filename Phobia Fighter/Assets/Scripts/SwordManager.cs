@@ -54,13 +54,13 @@ public class SwordManager : MonoBehaviour
 
             }*/
             
-            print(colliders.Length);
+            //print(colliders.Length);
             foreach(Collider2D collider in colliders)
             {
-                print(collider.name);
+                //print(collider.name);
                 if(collider.gameObject.GetComponent<healthManager>() != null && collider.gameObject.tag != "Player")
                 {
-                    print("DAMAGE MANAGER");
+                    //print("DAMAGE MANAGER");
                     collider.gameObject.GetComponent<healthManager>().Damage(sword.damage*damageMult, gameObject);
                     if(stolenLife != 0)
                     {

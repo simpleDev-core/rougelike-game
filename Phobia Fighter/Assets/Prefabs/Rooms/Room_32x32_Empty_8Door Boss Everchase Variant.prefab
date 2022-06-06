@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6246550966141954280
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 803648580502514247, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 803648580502514247, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_InstanceId
+      value: -967384
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412996993772684842, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412996993772684842, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412996993772684842, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412996993772684842, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412996993772684842, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412996993772684842, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412996993772684842, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412996993772684842, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412996993772684842, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412996993772684842, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412996993772684842, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412996993772684843, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_Name
+      value: Room_32x32_Empty_8Door Boss Everchase Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951929800525352536, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951929800525352536, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_InstanceId
+      value: -967376
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487703490968968198, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487703490968968198, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_InstanceId
+      value: -967368
+      objectReference: {fileID: 0}
+    - target: {fileID: 2801985996925273092, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2801985996925273092, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_InstanceId
+      value: -967392
+      objectReference: {fileID: 0}
+    - target: {fileID: 5060586062491542196, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: summon
+      value: 
+      objectReference: {fileID: 3814614270726195064, guid: 125c6fad7d9964659961f7ba8d6ca51f, type: 3}
+    - target: {fileID: 5060586062491542196, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: brightness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307819074591254296, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307819074591254296, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_InstanceId
+      value: -967344
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535667304105574484, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535667304105574484, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_InstanceId
+      value: -967352
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872792258699272703, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872792258699272703, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_InstanceId
+      value: -967360
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031436080104134699, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031436080104134699, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}
+      propertyPath: m_InstanceId
+      value: -967336
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 031303828e6f14931b2d7b8b136fb76e, type: 3}

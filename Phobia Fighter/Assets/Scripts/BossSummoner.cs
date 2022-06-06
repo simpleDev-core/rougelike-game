@@ -17,6 +17,7 @@ public class BossSummoner : MonoBehaviour
     UnityEngine.Rendering.Universal.Light2D playerLight;
     public float brightness = 0.1f;
     float oldBright;
+    float shadowIntense;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class BossSummoner : MonoBehaviour
         ambiance = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
         renderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        shadowIntense = playerLight.shadowIntensity;
     }
 
     // Update is called once per frame
@@ -65,6 +67,7 @@ public class BossSummoner : MonoBehaviour
     public void FinishSummon()
     {
         setPlayerLight(oldBright);
+        playerLight.shadowIntensity = shadowIntense;
         ambiance.Play();
     }
 }
