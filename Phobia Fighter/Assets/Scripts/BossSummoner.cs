@@ -27,6 +27,7 @@ public class BossSummoner : MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         shadowIntense = playerLight.shadowIntensity;
+        oldBright = playerLight.intensity;
     }
 
     // Update is called once per frame
@@ -44,7 +45,7 @@ public class BossSummoner : MonoBehaviour
     }
     public void setPlayerLight(float intensity)
     {
-        oldBright = playerLight.intensity;
+        
         playerLight.intensity = intensity;
         playerLight.shadowIntensity = 1;
     }

@@ -165,6 +165,10 @@ public class DoorLayout : MonoBehaviour
 
         return -1;
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(new Vector3(xCount * offset / 2, yCount * offset / 2, 0), new Vector3(xCount * offset, yCount * offset, 0));
+    }
     //public void OldRoomGen()
     //{
     //    for (int x = 0; x < xCount; x++)

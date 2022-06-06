@@ -21,6 +21,7 @@ public class healthManager : MonoBehaviour
     public GameObject youDied;
     public float damageMod = 1;
     public bool laserProt;
+    
     // Start is called before the firdst frame update
     void Start()
     {
@@ -38,6 +39,7 @@ public class healthManager : MonoBehaviour
         if (youDied != null){
             Camera.main.gameObject.transform.parent = null;
             youDied.gameObject.SetActive(true);
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().DestroyAllBesidesPlayer();
         }
         
         Destroy(gameObject);
@@ -108,7 +110,12 @@ public class healthManager : MonoBehaviour
         StartCoroutine(VolumeInterp(0.1f, 0, 1f));
     }
 
-
+    IEnumerator damageEffect()
+    {
+        Time.timeScale = 0.5f;
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale = 1;
+    }
 
     public void Damage(float damage, GameObject instigator = null, string type = "normal")
     {
@@ -125,7 +132,10 @@ public class healthManager : MonoBehaviour
                     DamageEvent.Invoke();
 
                 }
-
+                if(gameObject.tag == "Player")
+                {
+                    StartCoroutine(damageEffect());
+                }
                 health -= damage * damageMod;
                 Vector3 offset = -instigator.transform.position + gameObject.transform.position;
                 if (gameObject.tag == "Player")
