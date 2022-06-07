@@ -13,6 +13,8 @@ TagManager:
   - InventoryCanvas
   - Sword
   - Audio
+  - GameManager
+  - DND
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class healthManager : MonoBehaviour
 {
     public float health = 12;
     public float maxHealth = 12;
+    //public float tempHealth = 0;
     public Image healthBar;
     bool healthBarEnabled;
     public UnityEvent DamageEvent;
@@ -20,6 +21,7 @@ public class healthManager : MonoBehaviour
     public GameObject youDied;
     public float damageMod = 1;
     public bool laserProt;
+    
     // Start is called before the firdst frame update
     void Start()
     {
@@ -37,12 +39,17 @@ public class healthManager : MonoBehaviour
         if (youDied != null){
             Camera.main.gameObject.transform.parent = null;
             youDied.gameObject.SetActive(true);
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().DestroyAllBesidesPlayer();
         }
         
         Destroy(gameObject);
     }
     void Update()
     {
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
         if(health >= maxHealth && !alwaysShowBar)
         {
             healthCanvas.SetActive(false);
@@ -75,7 +82,7 @@ public class healthManager : MonoBehaviour
                 }
                 //print(x / fadeOutTime / Time.deltaTime);
                 //print(x.ToString() + (fadeInTime / Time.deltaTime).ToString());
-                yield return new WaitForEndOfFrame();
+                yield return new WaitForSeconds(Time.deltaTime);
             }
         }
         pp.weight = 1;
@@ -91,14 +98,25 @@ public class healthManager : MonoBehaviour
             }
             //print(x / fadeOutTime / Time.deltaTime);
             //print(x.ToString() + (fadeOutTime / Time.deltaTime).ToString());
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(Time.deltaTime);
         }
         pp.weight = 0;
     }
+
+
+
     public void PostProcessingEdit()
     {
-        StartCoroutine(VolumeInterp(0.01f, 0, 0.5f));
+        StartCoroutine(VolumeInterp(0.1f, 0, 1f));
     }
+
+    IEnumerator damageEffect()
+    {
+        Time.timeScale = 0.5f;
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale = 1;
+    }
+
     public void Damage(float damage, GameObject instigator = null, string type = "normal")
     {
         if(invincible != true)
@@ -114,7 +132,10 @@ public class healthManager : MonoBehaviour
                     DamageEvent.Invoke();
 
                 }
-
+                if(gameObject.tag == "Player")
+                {
+                    StartCoroutine(damageEffect());
+                }
                 health -= damage * damageMod;
                 Vector3 offset = -instigator.transform.position + gameObject.transform.position;
                 if (gameObject.tag == "Player")

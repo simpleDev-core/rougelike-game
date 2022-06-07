@@ -15,6 +15,9 @@ public class BossSummoner : MonoBehaviour
     GameObject player;
     AudioSource ambiance;
     UnityEngine.Rendering.Universal.Light2D playerLight;
+    public float brightness = 0.1f;
+    float oldBright;
+    float shadowIntense;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,8 @@ public class BossSummoner : MonoBehaviour
         ambiance = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
         renderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        shadowIntense = playerLight.shadowIntensity;
+        oldBright = playerLight.intensity;
     }
 
     // Update is called once per frame
@@ -30,18 +35,40 @@ public class BossSummoner : MonoBehaviour
     {
         
     }
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Summon();
+            gameObject.GetComponent<SphereCollider>().enabled = false;
+        }
+    }
     public void setPlayerLight(float intensity)
     {
+        
         playerLight.intensity = intensity;
         playerLight.shadowIntensity = 1;
+    }
+    IEnumerator dissapear()
+    {
+        yield return new WaitForSeconds(this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + destructionDelay);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<UnityEngine.Rendering.Universal.Light2D>().enabled = false;
+        yield break;
     }
     public void Summon()
     {
         animator.Play(summonAnim, 0);
-        Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + destructionDelay);
-        Instantiate(summon, gameObject.transform.position, Quaternion.identity);
+        StartCoroutine(dissapear());
+        //Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + destructionDelay);
+        GameObject clone = Instantiate(summon, gameObject.transform.position, Quaternion.identity);
+        clone.GetComponent<Boss>().summoner = gameObject.GetComponent<BossSummoner>();
         ambiance.Pause();
-
-
+    }
+    public void FinishSummon()
+    {
+        setPlayerLight(oldBright);
+        playerLight.shadowIntensity = shadowIntense;
+        ambiance.Play();
     }
 }
