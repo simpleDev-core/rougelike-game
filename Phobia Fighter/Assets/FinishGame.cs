@@ -17,7 +17,7 @@ public class FinishGame : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        UnityEditor.EditorApplication.ExitPlaymode();
+        //UnityEditor.EditorApplication.ExitPlaymode();
         Application.Quit();
         //UnityEditor.EditorApplication.isPlaying = false;
     }
