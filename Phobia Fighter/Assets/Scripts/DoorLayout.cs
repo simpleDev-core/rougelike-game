@@ -72,52 +72,56 @@ public class DoorLayout : MonoBehaviour
                         skip = true;
                     }
                 }
-                if (roomSpawnsQueue[index] != null)
+                if(index < roomSpawnsQueue.Count)
                 {
-                    if (skip)
+                    if (roomSpawnsQueue[index] != null)
                     {
-                        print("skip on " + x + "," + y);
-                    }
-                    else
-                    {
-                        GameObject clone;
-                        if (roomSpawnsQueue[index].room != null)
+                        if (skip)
                         {
-                            clone = Instantiate(roomSpawnsQueue[index].room, new Vector3(x * offset, y * offset, 0), Quaternion.identity);
-                            if (roomSpawnsQueue[index].rotation)
-                            {
-                                clone.transform.Rotate(new Vector3(0, 0, 90 * Mathf.RoundToInt(Random.Range(0, 5))));
-                            }
+                            print("skip on " + x + "," + y);
                         }
                         else
                         {
-                            int weightedInd = GetRandomWeightedIndex(Rooms);
-                            clone = Instantiate(Rooms[weightedInd].room, new Vector3(x * offset, y * offset, 0), Quaternion.identity);
-                            if (Rooms[weightedInd].rotation)
+                            GameObject clone;
+                            if (roomSpawnsQueue[index].room != null)
                             {
-                                clone.transform.Rotate(new Vector3(0, 0, 90 * Mathf.RoundToInt(Random.Range(0, 5))));
+                                clone = Instantiate(roomSpawnsQueue[index].room, new Vector3(x * offset, y * offset, 0), Quaternion.identity);
+                                if (roomSpawnsQueue[index].rotation)
+                                {
+                                    clone.transform.Rotate(new Vector3(0, 0, 90 * Mathf.RoundToInt(Random.Range(0, 5))));
+                                }
                             }
-                        }
-                        Room room = clone.GetComponent<DoorInfo>().info;
-                        if (room.dimensions.x > 1)
-                        {
-                            //rotate = false;
-                            blacklist.Add(new Vector2(x + room.dimensions.x - 1, y));
-                        }
-                        if (room.dimensions.y > 1)
-                        {
-                            //room = false;
-                            blacklist.Add(new Vector2(x, y + room.dimensions.y - 1));
-                        }
-                        if (room.dimensions.y > 1 && room.dimensions.x > 1)
-                        {
-                            //room = false;
-                            blacklist.Add(new Vector2(x + room.dimensions.x - 1, y + room.dimensions.y - 1));
-                        }
+                            else
+                            {
+                                int weightedInd = GetRandomWeightedIndex(Rooms);
+                                clone = Instantiate(Rooms[weightedInd].room, new Vector3(x * offset, y * offset, 0), Quaternion.identity);
+                                if (Rooms[weightedInd].rotation)
+                                {
+                                    clone.transform.Rotate(new Vector3(0, 0, 90 * Mathf.RoundToInt(Random.Range(0, 5))));
+                                }
+                            }
+                            Room room = clone.GetComponent<DoorInfo>().info;
+                            if (room.dimensions.x > 1)
+                            {
+                                //rotate = false;
+                                blacklist.Add(new Vector2(x + room.dimensions.x - 1, y));
+                            }
+                            if (room.dimensions.y > 1)
+                            {
+                                //room = false;
+                                blacklist.Add(new Vector2(x, y + room.dimensions.y - 1));
+                            }
+                            if (room.dimensions.y > 1 && room.dimensions.x > 1)
+                            {
+                                //room = false;
+                                blacklist.Add(new Vector2(x + room.dimensions.x - 1, y + room.dimensions.y - 1));
+                            }
 
-                        index++;
+                            index++;
+                        }
                     }
                 }
+                
             }
             x++;
         }
