@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool destroyAll;
     public GameObject whiteDoor;
     public float spawnRadius;
+    bool win;
     public GameObject death;
     GameObject player;
     public AudioClip NOISE;
@@ -28,10 +29,10 @@ public class GameManager : MonoBehaviour
             DestroyAllBesidesPlayer();
             destroyAll = false;
         }
-        if (Everchase && MrPitch && BigWord)
+        if (Everchase && MrPitch && BigWord && !win)
         {
             Win();
-            Everchase = false;
+            win = true;
         }
         if(Vector3.Distance(player.transform.position, transform.position) >= spawnRadius && Time.frameCount % (Mathf.RoundToInt(3/Time.deltaTime)) == 0)
         {
@@ -53,7 +54,7 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         DestroyAllBesidesPlayer();
-        Instantiate(whiteDoor, player.transform.position + new Vector3(0, 5, 0), Quaternion.identity);
+        Instantiate(whiteDoor, player.transform.position + new Vector3(0, 3, 0), Quaternion.identity);
     }
 
     public void DestroyAllBesidesPlayer()

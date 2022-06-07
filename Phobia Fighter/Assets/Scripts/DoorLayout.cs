@@ -58,12 +58,13 @@ public class DoorLayout : MonoBehaviour
             roomSpawnsQueue[randomIndex] = temp;
         }
 
-        int index = 0;
+        int index = -1;
         int x = 0;
         while (true)
         {
             for(int y = 0; y < yCount; y++)
             {
+                index++;
                 bool skip = false;
                 foreach(Vector2 vector in blacklist)
                 {
@@ -72,8 +73,10 @@ public class DoorLayout : MonoBehaviour
                         skip = true;
                     }
                 }
-                if(index < roomSpawnsQueue.Count)
+                
+                if(true)
                 {
+                    print(index);
                     if (roomSpawnsQueue[index] != null)
                     {
                         if (skip)
@@ -117,15 +120,20 @@ public class DoorLayout : MonoBehaviour
                                 blacklist.Add(new Vector2(x + room.dimensions.x - 1, y + room.dimensions.y - 1));
                             }
 
-                            index++;
+                            
                         }
                     }
                 }
+                else
+                {
+                    //break;
+                }
                 
+
             }
             x++;
         }
-        
+        print(index);
         
     }
 
