@@ -213,5 +213,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9ba76e51a9d4f268cf6852c5f5d430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _light2D: {fileID: 0}
-  sprite: {fileID: 0}
+  _light2D: {fileID: 3169315433805341392}
+  sprite: {fileID: 279731415278840068}
